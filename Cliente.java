@@ -1,52 +1,66 @@
-import java.util.*;
 
-class Cliente {
-    String nome;
-    String CNH;
-    String telefone;
-    String CPF;
 
-    Cliente(String nome, String CNH, String telefone, String CPF) {
-        this.nome = nome;
-        this.CNH = CNH;
-        this.telefone = telefone;
-        this.CPF = CPF;
-    }
-}
+public class Cliente{
+    
+	private String nome;
+    private String CNH;
+    private String telefone;
+    private String CPF;
+    
+	public Cliente() {
+	}
 
-class Sistema {
-    Map<String, Cliente> clientes = new HashMap<>();
+	public Cliente(String nome, String CNH){
+		
+		this.nome = nome;
+		this.CNH = CNH;
 
-    void incluirCliente(Cliente cliente) {
-        clientes.put(cliente.CPF, cliente);
-    }
+	}
 
-    void excluirCliente(String CPF) {
-        if (clientes.containsKey(CPF)) {
-            clientes.remove(CPF);
-        } else {
-            System.out.println("Cliente não encontrado.");
-        }
-    }
+	public Cliente(String nome, String CNH, String Telefone, String CPF){
+		
+		this.nome = nome;
+		this.CNH = CNH;
+		this.telefone = Telefone;
+		this.CPF = CPF;
+		
+	}
 
-    void editarDadosCliente(String CPF, String nome, String CNH, String telefone) {
-        if (clientes.containsKey(CPF)) {
-            Cliente cliente = clientes.get(CPF);
-            cliente.nome = nome;
-            cliente.CNH = CNH;
-            cliente.telefone = telefone;
-        } else {
-            System.out.println("Cliente não encontrado.");
-        }
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    void listarClientes() {
-        for (Cliente cliente : clientes.values()) {
-            System.out.println("Nome: " + cliente.nome);
-            System.out.println("CNH: " + cliente.CNH);
-            System.out.println("Telefone: " + cliente.telefone);
-            System.out.println("CPF: " + cliente.CPF);
-            System.out.println("--------------------");
-        }
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCNH() {
+		return CNH;
+	}
+
+	public void setCNH(String cNH) {
+		this.CNH = cNH;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getCPF() {
+		return CPF;
+	}
+
+	public void setCPF(String CPF) {
+		this.CPF = CPF;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente {" + " Nome: " + getNome() + " | CNH: " + getCNH() + " | Telefone: " + getTelefone() + " | CPF: " + getCPF() + " } ";
+	}
+    
 }
