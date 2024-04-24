@@ -7,6 +7,7 @@ public class Locacao {
     private Date dataDevolucao;
     private double valorPago;
     private Locacao proximo;
+    private Locacao anterior;
 
     public Locacao(String CNHCliente, String placaVeiculo, Date dataRetirada, Date dataDevolucao, double valorPago) {
         this.CNHCliente = CNHCliente;
@@ -15,6 +16,7 @@ public class Locacao {
         this.dataDevolucao = dataDevolucao;
         this.valorPago = valorPago;
         this.proximo = null;
+        this.anterior = null;
     }
 
     // Getters e Setters
@@ -59,6 +61,12 @@ public class Locacao {
         this.valorPago = valorPago;
     }
 
+    public Locacao getAnterior() {
+        return anterior;
+    }
+    public void setAnterior(Locacao anterior) {
+        this.anterior = anterior;
+    }
     public Locacao getProximo() {
         return proximo;
     }

@@ -52,6 +52,7 @@ public class LocacaoLista {
         }
     }
     
+    
     public boolean verificarLocacao(String placaVeiculo) {
         Locacao atual = primeiro;
         while (atual != null) {

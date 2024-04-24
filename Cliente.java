@@ -4,6 +4,7 @@ public class Cliente {
     private String telefone;
     private String CPF;
     private Cliente proximo;
+    private Cliente anterior;
 
     public Cliente(String nome, String CNH, String telefone, String CPF) {
         this.nome = nome;
@@ -11,6 +12,7 @@ public class Cliente {
         this.telefone = telefone;
         this.CPF = CPF;
         this.proximo = null;
+        this.anterior = null;
     }
 
     // Getters e Setters
@@ -55,6 +57,12 @@ public class Cliente {
         this.proximo = proximo;
     }
 
+    public Cliente getAnterior() {
+        return anterior;
+    }
+    public void setAnterior(Cliente anterior) {
+        this.anterior = anterior;
+    }
     @Override
     public String toString() {
         return "Nome: " + nome + ", CNH: " + CNH + ", Telefone: " + telefone + ", CPF: " + CPF;

@@ -28,7 +28,7 @@ public class VeiculoLista {
         }
     }
 
-    // Método que exclui um veículo
+    
     // Método que exclui um veículo
 public void excluirVeiculo(String placa) {
     Veiculo atual = primeiro;
@@ -85,6 +85,7 @@ public void excluirVeiculo(String placa) {
             atual = atual.getProximo();
         }
     }
+    
     public void listarVeiculosDoFinalParaInicio() {
         Veiculo atual = ultimo;
         while (atual != null) {

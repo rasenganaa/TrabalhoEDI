@@ -20,7 +20,7 @@ public class ClienteLista {
         }
     }
 
-    // Método para excluir um cliente
+
     // Método que exclui um cliente
 public void excluirCliente(String cpf) {
     Cliente atual = primeiro;
@@ -71,6 +71,13 @@ public void excluirCliente(String cpf) {
         while (atual != null) {
             System.out.println(atual);
             atual = atual.getProximo();
+        }
+    }
+    public void listarClientesDoFinalParaInicio() {
+        Cliente atual = ultimo;
+        while (atual != null) {
+            System.out.println(atual);
+            atual = atual.getAnterior();
         }
     }
 }

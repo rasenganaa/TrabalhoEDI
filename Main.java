@@ -8,10 +8,11 @@ import java.text.ParseException;
 public class Main {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        ClienteLista clienteLista = new ClienteLista();
-        VeiculoLista veiculoLista = new VeiculoLista();
         LocacaoLista locacaoLista = new LocacaoLista();
-        CategoriaLista categoriaLista = new CategoriaLista();
+        ClienteLista clienteLista = new ClienteLista(locacaoLista);
+        VeiculoLista veiculoLista = new VeiculoLista(locacaoLista);
+        CategoriaLista categoriaLista = new CategoriaLista(veiculoLista);
+
 
             veiculoLista.VeiculosCSV("Veiculos.csv");
             categoriaLista.carregarCategoriasCSV("Categorias.csv");
@@ -69,7 +70,7 @@ public class Main {
                 case 2:
                     excluirVeiculo(scanner, veiculoLista);
                     break;
-                    case 3:
+                case 3:
                     veiculoLista.listarVeiculos();
                     break;
                 case 4:
@@ -128,6 +129,7 @@ public class Main {
             System.out.println("1. Incluir cliente");
             System.out.println("2. Excluir cliente");
             System.out.println("3. Listar clientes");
+            System.out.println("4. Listar clientes do final para o início");
             System.out.println("0. Voltar ao Menu Inicial");
 
             System.out.print("Escolha uma opção: ");
@@ -142,6 +144,9 @@ public class Main {
                     break;
                 case 3:
                     listarClientes(clienteLista);
+                    break;
+                case 4:
+                    clienteLista.listarClientesDoFinalParaInicio();
                     break;
                 case 0:
                     System.out.println("Voltando ao Menu Inicial...");
